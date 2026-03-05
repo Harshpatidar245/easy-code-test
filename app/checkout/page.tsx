@@ -33,7 +33,7 @@ export default function Checkout(): JSX.Element {
     <div className="min-h-screen bg-primary-light">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+        <div className="max-w-[1840px] mx-auto px-4 py-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg"></div>
             <span className="font-bold text-lg">EasyCode Academy</span>
@@ -49,7 +49,7 @@ export default function Checkout(): JSX.Element {
       </header>
 
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      <div className="max-w-[1840px] mx-auto px-4 py-4">
         <div className="flex gap-2 text-sm text-gray-600">
           <Link href="/" className="hover:text-primary">Home</Link>
           <span>{'>'}</span>
@@ -58,7 +58,7 @@ export default function Checkout(): JSX.Element {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-[1840px] mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Left Section */}
@@ -277,7 +277,7 @@ export default function Checkout(): JSX.Element {
 
       {/* Security Footer */}
       <div className="bg-white mt-12 py-8 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-[1840px] mx-auto px-4">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-2">
               <span className="text-primary text-xl">🔒</span>
