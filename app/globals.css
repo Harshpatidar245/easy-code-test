@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: #6C3FC5;
+  --color-primary-dark: #5A2FB0;
+  --color-primary-light: #EDE5FF;
+  --color-accent: #F97316;
+  --color-accent-light: #FFF3E8;
+  --color-bg-light: #F8F6FF;
+  --color-bg-white: #FFFFFF;
+  --color-text-dark: #1A1A2E;
+  --color-text-gray: #6B7280;
+  --color-text-light: #9CA3AF;
+  --color-border: #E5E7EB;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #1A1A2E;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes countdown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-pulse-slow {
+  animation: countdown 2s ease-in-out infinite;
 }
