@@ -27,14 +27,14 @@ export default function MeetMentorsSection() {
   ];
 
   const stats = [
-    { value: "15+", label: "In-Demand Courses" },
-    { value: "200+", label: "Learners Trained" },
-    { value: "500+", label: "Doubts Solved" },
-    { value: "50+", label: "Real Projects Built" },
+    { value: "15+", label: "In-Demand Courses", icon: "📚" },
+    { value: "200+", label: "Learners Trained", icon: "👨‍🎓" },
+    { value: "500+", label: "Doubts Solved", icon: "💡" },
+    { value: "50+", label: "Real Projects Built", icon: "🚀" },
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-linear-to-b from-primary-light/50 to-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-dark">
@@ -53,7 +53,7 @@ export default function MeetMentorsSection() {
           {mentors.map((mentor) => (
             <div
               key={mentor.name}
-              className="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-border hover:shadow-xl transition-shadow"
+              className="bg-purple-50 rounded-2xl p-6 sm:p-8 shadow-md border border-border hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center gap-4">
                 <div
@@ -82,22 +82,29 @@ export default function MeetMentorsSection() {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Stats */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="bg-white rounded-xl p-4 sm:p-6 text-center shadow-sm border border-border hover:border-primary/30 transition-colors"
-            >
-              <div className="text-2xl sm:text-3xl font-bold text-primary">
-                {stat.value}
+      {/* Stats - Full Width Background */}
+      <div className="mt-10 sm:mt-12 bg-purple-50 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-transparent rounded-xl p-4 sm:p-6 text-center transition-all hover:shadow-md relative"
+              >
+                <div className="absolute top-3 left-3 w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-sm shadow-sm">
+                  {stat.icon}
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary mt-4">
+                  {stat.value}
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1 font-medium">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-xs sm:text-sm text-text-gray mt-1">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
