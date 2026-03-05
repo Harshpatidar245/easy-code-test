@@ -35,7 +35,7 @@ export default function MeetMentorsSection() {
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-dark">
             Meet Your <span className="text-primary">Mentors</span>
@@ -86,7 +86,7 @@ export default function MeetMentorsSection() {
 
       {/* Stats - Full Width Background */}
       <div className="mt-10 sm:mt-12 bg-purple-50 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((stat) => (
               <div

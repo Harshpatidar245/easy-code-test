@@ -146,7 +146,7 @@ const BonusCard = ({ icon, title, desc }: BonusItem) => (
 export default function BonusesSection() {
   return (
     <section className="py-20 sm:py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="w-full rounded-[3rem] px-8 py-16 sm:px-12 sm:py-24" style={{ background: "linear-gradient(135deg, #fdfcff 0%, #faf9ff 100%)" }}>
           {/* Title */}
           <div className="text-center mb-16">

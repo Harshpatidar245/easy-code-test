@@ -88,7 +88,7 @@ export default function ProgramRoadmapSection() {
 
   return (
     <section className="py-20 sm:py-32 bg-gray-50/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight mb-4">
             Program <span className="text-purple-600">Roadmap</span>
