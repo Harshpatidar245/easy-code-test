@@ -51,8 +51,10 @@ export default function HeroSection() {
       <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* Title Section - Centered */}
         <div className="text-center mb-8">
-          <h1 className="text-gray-600 text-lg sm:text-xl font-medium mb-2">EasyCode Academy - Python Using AI Live Workshop</h1>
-          <h2 className="text-gray-600 text-lg sm:text-xl font-medium mb-2">
+          <h1 className="text-purple-700 text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
+            EasyCode Academy – Python Using AI Live Workshop
+          </h1>
+          <h2 className="text-gray-500 text-base sm:text-lg font-medium mb-2">
             Master Python Using AI & Build Tech Career Skills
           </h2>
         </div>
@@ -68,19 +70,25 @@ export default function HeroSection() {
                   <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">📅</span>
                   </div>
-                  <span className="text-gray-700 font-medium text-base">30 Jan, 2026</span>
+                  <span className="text-gray-700 font-medium text-base">
+                    30 Jan, 2026
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">🕖</span>
                   </div>
-                  <span className="text-gray-700 font-medium text-base">7:00 PM</span>
+                  <span className="text-gray-700 font-medium text-base">
+                    7:00 PM
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">🎥</span>
                   </div>
-                  <span className="text-gray-700 font-medium text-base">Live Workshop</span>
+                  <span className="text-gray-700 font-medium text-base">
+                    Live Workshop
+                  </span>
                 </div>
               </div>
 
@@ -136,7 +144,7 @@ export default function HeroSection() {
                   <div className="absolute -right-6 bottom-16 w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center text-2xl z-20 hover:scale-110 transition-transform">
                     🚀
                   </div>
-                  
+
                   {/* Main laptop/screen illustration */}
                   <div className="text-center space-y-3 relative z-10 w-full">
                     <div className="w-full aspect-[4/3] bg-gradient-to-br from-purple-700 to-purple-900 rounded-xl flex items-center justify-center shadow-2xl relative">
@@ -146,18 +154,18 @@ export default function HeroSection() {
                         <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
                         <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
                       </div>
-                      
+
                       {/* Python icon */}
                       <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-white rounded-full shadow-xl flex items-center justify-center text-5xl z-30">
                         🐍
                       </div>
-                      
+
                       {/* Code text */}
                       <div className="text-purple-200 font-mono text-sm">
                         &lt; Python AI /&gt;
                       </div>
                     </div>
-                    
+
                     {/* Laptop base */}
                     <div className="w-[95%] h-3 bg-gradient-to-b from-purple-300 to-purple-400 rounded-b-xl mx-auto shadow-md"></div>
                   </div>
