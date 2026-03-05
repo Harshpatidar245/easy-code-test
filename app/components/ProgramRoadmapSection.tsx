@@ -1,9 +1,64 @@
+interface CardProps {
+  icon: string;
+  title: string;
+  bullets: string[];
+}
+
+const CheckBadge = () => (
+  <div
+    className="absolute -top-1 -right-1.5 w-6 h-6 rounded-full flex items-center justify-center border-2 border-white shadow-md"
+    style={{ background: "#7c5cbf" }}
+  >
+    <svg viewBox="0 0 10 10" fill="none" className="w-3 h-3">
+      <path
+        d="M2.5 5l1.8 1.8L7.5 3"
+        stroke="#fff"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
+);
+
+const Card = ({ icon, title, bullets }: CardProps) => (
+  <div className="bg-white rounded-3xl px-8 py-10 shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col items-center text-center max-w-[320px] mx-auto w-full group">
+    {/* Icon Container */}
+    <div className="relative mb-8 transform group-hover:scale-110 transition-transform duration-500">
+      <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl bg-gradient-to-r from-purple-600 to-purple-700 group-hover:from-purple-700 group-hover:to-purple-800 transition-all duration-500 shadow-xl text-white">
+        {icon}
+      </div>
+      <CheckBadge />
+    </div>
+
+    {/* Title */}
+    <h3 className="text-xl font-extrabold text-gray-900 leading-tight mb-6 min-h-[56px] flex items-center justify-center px-2">
+      {title}
+    </h3>
+
+    {/* Divider */}
+    <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-8" />
+
+    {/* Bullets */}
+    <ul className="w-full space-y-4">
+      {bullets.map((b, i) => (
+        <li
+          key={i}
+          className="flex items-start justify-start gap-3 text-sm text-gray-600 font-semibold leading-relaxed"
+        >
+          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0" />
+          <span className="text-left">{b}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 export default function ProgramRoadmapSection() {
-  const phases = [
+  const cards = [
     {
       icon: "📚",
       title: "Mentor-Led Structured Learning",
-      color: "bg-purple-50 border-purple-200",
       items: [
         "Core & Adv. Modules",
         "Hands-On Mini Projects",
@@ -13,18 +68,11 @@ export default function ProgramRoadmapSection() {
     {
       icon: "⚙️",
       title: "Practical Skills",
-      subtitle: "Functions & Modules",
-      color: "bg-blue-50 border-blue-200",
-      items: [
-        "Debugging techniques",
-        "Databases",
-        "API integration",
-      ],
+      items: ["Debugging techniques", "Databases", "API integration"],
     },
     {
       icon: "🏭",
       title: "Industry-Level Capstone",
-      color: "bg-green-50 border-green-200",
       items: [
         "Deploying techniques",
         "Building real-world apps",
@@ -34,66 +82,37 @@ export default function ProgramRoadmapSection() {
     {
       icon: "📝",
       title: "Structured Assignments",
-      color: "bg-orange-50 border-orange-200",
-      items: [
-        "Practical Exercises",
-        "Portfolio Completion",
-        "Capstone in Real",
-      ],
+      items: ["Practical Exercises", "Portfolio Completion", "Capstone in Real"],
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-dark">
-            Program <span className="text-primary">Roadmap</span>
+    <section className="py-20 sm:py-32 bg-gray-50/40">
+      <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight mb-4">
+            Program <span className="text-purple-600">Roadmap</span>
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-text-gray">
-            (30-Day Structured Plan)
-          </p>
+          <div className="inline-block px-4 py-1.5 rounded-full bg-purple-50 text-purple-700 text-sm font-bold tracking-wide uppercase">
+            30-Day Structured Plan
+          </div>
         </div>
 
-        {/* Timeline */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
-          {/* Connecting line - visible on lg screens */}
-          <div className="hidden lg:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-linear-to-r from-purple-300 via-blue-300 to-green-300" />
-
-          {phases.map((phase, idx) => (
-            <div
-              key={idx}
-              className={`${phase.color} rounded-2xl p-5 sm:p-6 border hover:shadow-lg transition-all relative`}
-            >
-              {/* Step indicator */}
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-sm border border-border mx-auto lg:mx-0">
-                {phase.icon}
-              </div>
-
-              <h3 className="mt-3 sm:mt-4 font-bold text-text-dark text-sm sm:text-base text-center lg:text-left">
-                {phase.title}
-              </h3>
-              {phase.subtitle && (
-                <p className="text-xs text-text-gray text-center lg:text-left">
-                  {phase.subtitle}
-                </p>
-              )}
-
-              <ul className="mt-3 space-y-2">
-                {phase.items.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2 text-xs sm:text-sm text-text-dark"
-                  >
-                    <span className="text-primary mt-0.5 shrink-0">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {cards.map((c, i) => (
+            <Card
+              key={i}
+              icon={c.icon}
+              title={c.title}
+              bullets={c.items}
+            />
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+
+

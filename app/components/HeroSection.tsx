@@ -48,9 +48,10 @@ export default function HeroSection() {
       <div className="absolute top-10 left-10 w-20 h-20 bg-purple-200/20 rounded-full blur-xl hidden lg:block" />
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-200/20 rounded-full blur-xl hidden lg:block" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* Title Section - Centered */}
         <div className="text-center mb-8">
+          <h1 className="text-gray-600 text-lg sm:text-xl font-medium mb-2">EasyCode Academy - Python Using AI Live Workshop</h1>
           <h2 className="text-gray-600 text-lg sm:text-xl font-medium mb-2">
             Master Python Using AI & Build Tech Career Skills
           </h2>

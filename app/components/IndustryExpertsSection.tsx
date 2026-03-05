@@ -40,7 +40,7 @@ export default function IndustryExpertsSection() {
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-bg-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-dark">
             Learn from <span className="text-primary">Industry Experts</span>
