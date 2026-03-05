@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent, FormEvent, JSX } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface FormData {
   fullName: string;
@@ -32,7 +33,7 @@ export default function Checkout(): JSX.Element {
     <div className="min-h-screen bg-primary-light">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+        <div className="max-w-[1840px] mx-auto px-4 py-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg"></div>
             <span className="font-bold text-lg">EasyCode Academy</span>
@@ -48,7 +49,7 @@ export default function Checkout(): JSX.Element {
       </header>
 
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      <div className="max-w-[1840px] mx-auto px-4 py-4">
         <div className="flex gap-2 text-sm text-gray-600">
           <Link href="/" className="hover:text-primary">Home</Link>
           <span>{'>'}</span>
@@ -57,7 +58,7 @@ export default function Checkout(): JSX.Element {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-[1840px] mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Left Section */}
@@ -133,7 +134,7 @@ export default function Checkout(): JSX.Element {
               </div>
             </form>
 
-            {/* Payment Method */}
+            {/* Payment Method (left) */}
             <div className="mb-8">
               <h3 className="text-lg font-semibold mb-4">Select Payment Method</h3>
               <div className="space-y-3">
@@ -146,8 +147,10 @@ export default function Checkout(): JSX.Element {
                     onChange={handleChange}
                     className="w-4 h-4"
                   />
-                  <span className="ml-3 text-primary font-semibold">Razorpay</span>
-                  <span className="ml-auto text-primary">✓</span>
+                  <span className="ml-3 text-gray-700 font-semibold">Razorpay</span>
+                  {formData.paymentMethod === 'razorpay' && (
+                    <span className="ml-auto text-primary font-bold text-lg">✓</span>
+                  )}
                 </label>
                 <label className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
                   <input
@@ -159,14 +162,17 @@ export default function Checkout(): JSX.Element {
                     className="w-4 h-4"
                   />
                   <span className="ml-3 text-gray-700 font-semibold">UPI</span>
+                  {formData.paymentMethod === 'upi' && (
+                    <span className="ml-auto text-primary font-bold text-lg">✓</span>
+                  )}
                 </label>
               </div>
             </div>
 
             {/* Proceed Button */}
-            <button className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition">
+            <button className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-4 transition">
               Proceed to Pay ₹99
-              <span>→</span>
+              <span>{'>'}</span>
             </button>
           </div>
 
@@ -176,9 +182,13 @@ export default function Checkout(): JSX.Element {
             
             {/* Illustration Placeholder */}
             <div className="bg-linear-to-br from-primary-light to-accent-light rounded-lg h-48 mb-6 flex items-center justify-center">
-              <div className="text-center opacity-75">
-                <p className="text-sm text-gray-500">Course Illustration</p>
-              </div>
+              <Image
+                src="/course-illustration.png"
+                alt="Course Illustration"
+                width={350}
+                height={200}
+                className="object-contain"
+              />
             </div>
 
             {/* Course Summary */}
@@ -225,42 +235,79 @@ export default function Checkout(): JSX.Element {
               <p className="text-sm text-green-600">Save ₹891 Today!</p>
             </div>
 
-            {/* Razorpay Info */}
+            {/* Razorpay Info (right summary) */}
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <input type="radio" checked readOnly className="w-4 h-4" />
-                <span className="font-semibold text-primary">Razorpay</span>
+              <p className="text-xs text-gray-600 mb-4 flex items-center gap-2">
+                <span>🔒</span>
+                <span>Payments secured by Razorpay</span>
+              </p>
+              
+              <div className="space-y-3">
+                <label className="flex items-center p-3 bg-white rounded-lg cursor-default">
+                  <input
+                    type="radio"
+                    name="paymentMethodSummary"
+                    checked={formData.paymentMethod === 'razorpay'}
+                    readOnly
+                    className="w-4 h-4"
+                  />
+                  <span className="ml-3 font-semibold text-gray-900">Razorpay</span>
+                </label>
+                <label className="flex items-center p-3 bg-white rounded-lg cursor-default">
+                  <input
+                    type="radio"
+                    name="paymentMethodSummary"
+                    checked={formData.paymentMethod === 'upi'}
+                    readOnly
+                    className="w-4 h-4"
+                  />
+                  <span className="ml-3 font-semibold text-gray-900">UPI</span>
+                </label>
               </div>
-              <p className="text-xs text-gray-600 mb-3">Payments secured by Razorpay</p>
             </div>
 
             {/* Proceed Button */}
-            <button className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition">
+            <button className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-4 transition">
               Proceed to Pay ₹99
-              <span>→</span>
+              <span>{'>'}</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* Security Footer */}
-      <div className="bg-white mt-12 py-8">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-2">
-              <span className="text-primary">🔒</span>
+      <div className="bg-white mt-12 py-8 border-t border-gray-200">
+        <div className="max-w-[1840px] mx-auto px-4">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="text-primary text-xl">🔒</span>
               <span className="font-semibold text-gray-700">SSL SECURE PAYMENT</span>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-8 flex-wrap">
-            <div className="text-center">
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <div className="text-center flex-1 min-w-fit">
+              <div className="text-3xl mb-1">🛡️</div>
               <p className="text-xs text-gray-600">256-Bit Encryption</p>
-              <p className="text-xs font-semibold">Most Secure Standard</p>
+              <p className="text-xs font-semibold text-gray-700">Most Secure Standard</p>
             </div>
-            <p className="text-sm text-gray-600">100% SAFE & SECURE</p>
-            <p className="text-sm text-gray-600">100% SECURE</p>
-            <p className="text-sm text-gray-600">SSL Verified</p>
-            <p className="text-sm font-semibold text-primary">Razorpay</p>
+            <div className="text-center flex-1 min-w-fit">
+              <div className="text-3xl mb-1">✅</div>
+              <p className="text-sm font-semibold text-gray-700">100% SAFE</p>
+              <p className="text-xs text-gray-600">& SECURE</p>
+            </div>
+            <div className="text-center flex-1 min-w-fit">
+              <div className="text-3xl mb-1">✓</div>
+              <p className="text-sm font-semibold text-gray-700">100%</p>
+              <p className="text-xs text-gray-600">SECURE</p>
+            </div>
+            <div className="text-center flex-1 min-w-fit">
+              <div className="text-3xl mb-1">🔐</div>
+              <p className="text-sm font-semibold text-gray-700">SSL</p>
+              <p className="text-xs text-gray-600">Verified</p>
+            </div>
+            <div className="text-center flex-1 min-w-fit">
+              <div className="text-2xl font-bold text-primary">Razorpay</div>
+            </div>
           </div>
         </div>
       </div>
