@@ -21,7 +21,7 @@ export default function Home() {
       <WhyEasyCodeSection />
       <BonusesSection />
       <ProgramRoadmapSection />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

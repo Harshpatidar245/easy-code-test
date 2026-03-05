@@ -10,29 +10,31 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">&lt;/&gt;</span>
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center gap-12">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-[#5c3e8e] rounded-lg flex items-center justify-center -skew-x-6">
+                <span className="text-white font-bold text-lg leading-none mt-1">▶️</span>
+              </div>
+              <div>
+                <span className="text-2xl font-bold text-[#5c3e8e]">EasyCode</span>
+                <span className="text-[12px] block -mt-1 text-gray-400 font-medium">Academy</span>
+              </div>
             </div>
-            <div>
-              <span className="text-lg font-bold text-primary">EasyCode</span>
-              <span className="text-[10px] block -mt-1 text-text-gray">Academy</span>
-            </div>
-          </div>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-sm text-text-dark hover:text-primary transition-colors font-medium"
-              >
-                {link}
-              </a>
-            ))}
+            {/* Desktop Links */}
+            <div className="hidden md:flex items-center gap-8 translate-y-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link}
+                  href="#"
+                  className="text-base text-gray-500 hover:text-[#5c3e8e] transition-colors font-medium"
+                >
+                  {link}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
