@@ -50,7 +50,9 @@ export default function WhyLearnSection() {
                   <h3 className="text-lg sm:text-xl font-bold text-text-dark">
                     {mentor.name}
                   </h3>
-                  <p className="text-xs sm:text-sm text-text-gray">{mentor.role}</p>
+                  <p className="text-xs sm:text-sm text-text-gray">
+                    {mentor.role}
+                  </p>
                   <p className="text-xs text-primary font-medium mt-1">
                     {mentor.specialization}
                   </p>

@@ -22,7 +22,7 @@ const CheckBadge = () => (
 );
 
 const Card = ({ icon, title, bullets }: CardProps) => (
-  <div className="bg-white rounded-3xl px-8 py-10 shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col items-center text-center max-w-[320px] mx-auto w-full group">
+  <div className="bg-white rounded-3xl px-8 py-10 shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col items-center text-center w-full group">
     {/* Icon Container */}
     <div className="relative mb-8 transform group-hover:scale-110 transition-transform duration-500">
       <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl bg-gradient-to-r from-purple-600 to-purple-700 group-hover:from-purple-700 group-hover:to-purple-800 transition-all duration-500 shadow-xl text-white">
@@ -93,13 +93,13 @@ export default function ProgramRoadmapSection() {
           <h2 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight mb-4">
             Program <span className="text-purple-600">Roadmap</span>
           </h2>
-          <div className="inline-block px-4 py-1.5 rounded-full bg-purple-50 text-purple-700 text-sm font-bold tracking-wide uppercase">
-            30-Day Structured Plan
+          <div className="inline-block px-4 py-1.5 text-5xl font-bold tracking-wide">
+            (30-Day Structured Plan)
           </div>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((c, i) => (
             <Card
               key={i}
